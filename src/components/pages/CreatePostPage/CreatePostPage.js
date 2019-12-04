@@ -1,13 +1,15 @@
 import React, { Component } from 'react';
+import PostNew from '../../PostNew/PostNew';
+import css from './CreatePostPage.module.css';
 
-export default class PetPage extends Component {
+export default class CreatePostPage extends Component {
   state = {};
 
   render() {
     return (
-      <>
-        <h1>Create Post Page</h1>
-      </>
+      <div className={css.container}>
+        <PostNew />
+      </div>
     );
   }
 }

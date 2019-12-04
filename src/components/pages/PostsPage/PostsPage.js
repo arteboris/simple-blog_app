@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-export default class PetsPage extends Component {
+export default class PostsPage extends Component {
   state = {};
 
   // componentDidMount() {
@@ -12,7 +12,7 @@ export default class PetsPage extends Component {
     return (
       <>
         {/* {items.length > 0 && <PetsList items={items} />} */}
-        <h1>PostsPage</h1>
+        <h1>Posts Page</h1>
       </>
     );
   }

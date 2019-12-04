@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
 
-export default class PetPage extends Component {
+export default class PostPage extends Component {
   state = {};
 
   render() {
     return (
       <>
-        <h1>PostPage</h1>
+        <h1>Post Page</h1>
       </>
     );
   }
