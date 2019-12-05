@@ -1,13 +1,20 @@
-import { createStore, combineReducers } from 'redux';
-import { devToolsEnhancer } from 'redux-devtools-extension';
+import { createStore, combineReducers, applyMiddleware } from 'redux';
+import { composeWithDevTools } from 'redux-devtools-extension';
+import ReduxThunk from 'redux-thunk';
 import postIdReducer from './postsId/postIdReducer';
 import postNewReducer from './postNew/postNewReducer';
 import postsAllReducer from './postsAll/postsAllReducer';
+import loaderReducer from './loader/loaderReducser';
 
-export const rootReducer = combineReducers({
+const rootReducer = combineReducers({
   postId: postIdReducer,
   postNew: postNewReducer,
   postsAll: postsAllReducer,
+  isLoading: loaderReducer,
 });
 
-export const store = createStore(rootReducer, devToolsEnhancer());
+const enhancer = applyMiddleware(ReduxThunk);
+
+const store = createStore(rootReducer, composeWithDevTools(enhancer));
+
+export default store;

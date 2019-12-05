@@ -1,46 +1,58 @@
-/* eslint-disable jsx-a11y/label-has-associated-control */
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import css from './PostNew.module.css';
 
-export default class PostNew extends Component {
-  state = {};
+class PostNew extends Component {
+  state = { title: '', body: '' };
+
+  handleSubmit = evt => {
+    evt.preventDefault();
+    this.props.addPost(this.state);
+    this.setState({
+      title: '',
+      body: '',
+    });
+  };
+
+  handleChange = ({ target }) => {
+    const { name, value } = target;
+    this.setState({ [name]: value });
+  };
 
   render() {
+    const { title, body } = this.state;
     return (
       <>
-        <form className={css.adForm}>
+        <form className={css.adForm} onSubmit={this.handleSubmit}>
           <label>Title</label>
           <input
             placeholder="..."
+            onChange={this.handleChange}
             minLength="3"
             required
             type="text"
             name="title"
-            value=""
+            value={title}
           />
           <label>Description</label>
           <textarea
             placeholder="..."
+            onChange={this.handleChange}
             required
             minLength="3"
-            name="description"
-            value=""
+            type="text"
+            name="body"
+            value={body}
           />
-          {/* <label>Оберіть фото</label>
-          <div className="wrap_img_add">
-            <span id="outputMulti" />
-          </div>
-          <input
-            type="file"
-            id="fileMulti"
-            name="images"
-            multiple
-            accept="image/x-png,image/gif,image/jpeg,image/jpg"
-            value=""
-          /> */}
-          <button type="button">Create post</button>
+          <button type="submit">Create post</button>
         </form>
       </>
     );
   }
 }
+
+export default PostNew;
+
+PostNew.propTypes = {
+  addPost: PropTypes.func.isRequired,
+};

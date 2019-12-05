@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import PostNew from '../../PostNew/PostNew';
+import PostNew from '../../PostNew/PostNewContainer';
 import css from './CreatePostPage.module.css';
 
 export default class CreatePostPage extends Component {

@@ -1,19 +1,12 @@
-import React, { Component } from 'react';
+import React from 'react';
+import PostsAll from '../../PostsAll/PostsAllContainer';
 
-export default class PostsPage extends Component {
-  state = {};
+const PostsPage = () => {
+  return (
+    <>
+      <PostsAll />
+    </>
+  );
+};
 
-  // componentDidMount() {
-  //   this.setState({ items: posts });
-  // }
-
-  render() {
-    // const { items } = this.state;
-    return (
-      <>
-        {/* {items.length > 0 && <PetsList items={items} />} */}
-        <h1>Posts Page</h1>
-      </>
-    );
-  }
-}
+export default PostsPage;

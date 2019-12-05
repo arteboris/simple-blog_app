@@ -1,0 +1,25 @@
+.list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  grid-gap: 16px;
+  list-style: none;
+  padding: 20px 30px;
+}
+
+.item {
+  border: solid 1px tomato;
+}
+
+.itemTitle {
+  text-align: center;
+  font-size: 20px;
+}
+
+.itemBody {
+  text-align: center;
+  font-size: 14px;
+  white-space: nowrap;
+  overflow: hidden;
+  padding: 5px;
+  text-overflow: ellipsis;
+}
