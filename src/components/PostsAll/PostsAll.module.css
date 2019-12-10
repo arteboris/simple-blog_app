@@ -3,11 +3,12 @@
   grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
   grid-gap: 16px;
   list-style: none;
-  padding: 20px 30px;
+  padding: 30px 100px;
 }
 
 .item {
-  border: solid 1px tomato;
+  box-shadow: -3px 1px 12px 1px #575457;
+  background-color: white;
 }
 
 .itemTitle {
