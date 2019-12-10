@@ -10,6 +10,13 @@ export const addPostOnServer = post => axios.post('/posts', post);
 
 export const getPostsonServer = () => axios.get('/posts');
 
-export const getPostIdsonServer = postId => axios.get(`/posts/${postId}`);
+export const getPostIdsonServer = id =>
+  axios.get(`/posts/${id}?_embed=comments`);
 
-export const deletePostIdsonServer = postId => axios.delete(`/posts/${postId}`);
+export const deletePostIdsonServer = id => axios.delete(`/posts/${id}`);
+
+export const changePostIdonServer = (id, post) =>
+  axios.put(`/posts/${id}`, post);
+
+export const addCommentPostOnServer = comment =>
+  axios.post('/comments', comment);

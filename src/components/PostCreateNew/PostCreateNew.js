@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import css from './PostNew.module.css';
+import css from './PostCreateNew.module.css';
 
-class PostNew extends Component {
+class PostCreateNew extends Component {
   state = { title: '', body: '' };
 
   handleSubmit = evt => {
@@ -44,15 +44,15 @@ class PostNew extends Component {
             name="body"
             value={body}
           />
-          <button type="submit">Create post</button>
+          <button type="submit">Add Post</button>
         </form>
       </>
     );
   }
 }
 
-export default PostNew;
+export default PostCreateNew;
 
-PostNew.propTypes = {
+PostCreateNew.propTypes = {
   addPost: PropTypes.func.isRequired,
 };

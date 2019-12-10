@@ -8,7 +8,7 @@ import 'react-loader-spinner/dist/loader/css/react-spinner-loader.css';
 import Navigation from './pages/Navigation/Navigation';
 import HomePage from './pages/HomePage/HomePage';
 import AboutPage from './pages/AboutPage/AboutPage';
-import PostsPage from './pages/PostsPage/PostsPage';
+import PostsAllPage from './pages/PostsAllPage/PostsAllPage';
 import PostPage from './pages/PostPage/PostPage';
 import CreatePostPage from './pages/CreatePostPage/CreatePostPage';
 
@@ -41,7 +41,7 @@ class App extends Component {
         )}
         <Navigation />
         <Switch>
-          <Route path="/" exact component={PostsPage} />
+          <Route path="/" exact component={PostsAllPage} />
           <Route path="/home" component={HomePage} />
           <Route path="/posts/new" component={CreatePostPage} />
           <Route path="/posts/:id" component={PostPage} />

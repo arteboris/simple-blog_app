@@ -1,24 +1,24 @@
 import { toast } from 'react-toastify';
 import {
-  addPostStart,
-  addPostSuccess,
-  addPostError,
-  deletePostStart,
-  deletePostSuccess,
-  deletePostError,
-} from './postNewActions';
-import { addPostOnServer, deletePostIdsonServer } from '../../services/api';
+  fetchPostStart,
+  fetchPostSuccess,
+  fetchPostError,
+  changePostStart,
+  changePostSuccess,
+  changePostError,
+} from './postActions';
+import { getPostIdsonServer, changePostIdonServer } from '../../services/api';
 
 toast.configure({
   autoClose: 5000,
   draggable: false,
 });
 
-export const addPost = post => dispatch => {
-  dispatch(addPostStart());
-  addPostOnServer(post)
+export const getPostId = id => dispatch => {
+  dispatch(fetchPostStart());
+  getPostIdsonServer(id)
     .then(response => {
-      dispatch(addPostSuccess(response.data));
+      dispatch(fetchPostSuccess(response.data));
     })
     .catch(error => {
       toast.error(
@@ -28,15 +28,15 @@ export const addPost = post => dispatch => {
           className: 'foo-bar',
         },
       );
-      return dispatch(addPostError(error));
+      return dispatch(fetchPostError(error));
     });
 };
 
-export const deletePostId = postId => dispatch => {
-  dispatch(deletePostStart());
-  deletePostIdsonServer(postId)
+export const changePostId = (id, post) => dispatch => {
+  dispatch(changePostStart());
+  changePostIdonServer(id, post)
     .then(response => {
-      dispatch(deletePostSuccess(response.data));
+      dispatch(changePostSuccess(response.data));
     })
     .catch(error => {
       toast.error(
@@ -46,6 +46,6 @@ export const deletePostId = postId => dispatch => {
           className: 'foo-bar',
         },
       );
-      return dispatch(deletePostError(error));
+      return dispatch(changePostError(error));
     });
 };

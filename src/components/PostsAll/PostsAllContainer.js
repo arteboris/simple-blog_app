@@ -1,7 +1,10 @@
 import { connect } from 'react-redux';
 import PostsAll from './PostsAll';
-import getPostsAll from '../../redux/postsAll/postsAllOperations';
-import postsAll from '../../redux/postsAll/postsAllSelectors';
+import {
+  getPostsAll,
+  deletePostId,
+} from '../../redux/postsAllList/postsAllOperations';
+import postsAll from '../../redux/postsAllList/postsAllSelectors';
 
 const mapStateToProps = state => ({
   postsAll: postsAll(state),
@@ -9,6 +12,7 @@ const mapStateToProps = state => ({
 
 const mapDispatchToProps = {
   getPostsAll,
+  onDeletePost: id => deletePostId(id),
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(PostsAll);
