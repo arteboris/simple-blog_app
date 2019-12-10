@@ -1,0 +1,80 @@
+.adForm {
+  display: flex;
+  flex-direction: column;
+  width: 700px;
+  max-width: 100%;
+  padding: 20px 0;
+  background-color: rgb(255, 255, 255);
+  border-radius: 4px;
+  margin: 0 auto;
+}
+.adForm h3 {
+  text-align: center;
+}
+
+.adForm input,
+.adForm textarea {
+  margin-bottom: 30px;
+  padding: 10px;
+  border: 1px solid #ddd;
+  font-family: Montserrat;
+  font-weight: 400;
+  font-size: 16px;
+  color: black;
+}
+.adForm button {
+  background-color: #2b5577;
+  padding: 20px;
+  color: #fff;
+  border-radius: 20px;
+  width: 200px;
+}
+
+.adForm button {
+  border: none;
+  display: block;
+  margin: 0 auto;
+  color: rgb(255, 255, 255);
+  background-color: #497eaa;
+  padding: 10px 0;
+  font-family: Montserrat;
+  font-weight: 500;
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.adForm button:hover,
+.adForm button:focus {
+  color: rgb(255, 255, 255);
+  background-color: rgb(240, 164, 23);
+}
+
+.adForm label {
+  margin-bottom: 10px;
+  font-family: Montserrat;
+  font-weight: 500;
+  font-size: 18px;
+}
+.adForm textarea {
+  height: 10rem;
+  font-size: 14px;
+}
+
+.list {
+  list-style: none;
+  padding: 20px 30px;
+  width: 800px;
+  max-width: 100%;
+  display: block;
+  margin: 0 auto;
+}
+
+.item {
+  border: solid 1px tomato;
+  margin-bottom: 10px;
+}
+
+.itemBody {
+  font-size: 14px;
+  padding: 5px;
+}

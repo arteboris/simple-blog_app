@@ -1,8 +1,9 @@
+/* eslint-disable react/destructuring-assignment */
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-import getPostId from '../../../redux/postsId/postIdOperations';
-import PostId from '../../PostId/PostIdContainer';
+import { getPostId } from '../../../redux/post/postOperations';
+import Post from '../../Post/PostContainer';
 
 class PostPage extends Component {
   state = {};
@@ -16,7 +17,6 @@ class PostPage extends Component {
 
   componentDidMount() {
     const id = this.getIdFromProps(this.props);
-    // eslint-disable-next-line react/destructuring-assignment
     this.props.getPostId(id);
   }
 
@@ -30,7 +30,7 @@ class PostPage extends Component {
   render() {
     return (
       <>
-        <PostId onReturn={this.handleOnReturn} />
+        <Post onReturn={this.handleOnReturn} />
       </>
     );
   }

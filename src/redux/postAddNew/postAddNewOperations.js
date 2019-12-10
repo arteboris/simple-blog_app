@@ -1,21 +1,21 @@
 import { toast } from 'react-toastify';
 import {
-  fetchPostsAllStart,
-  fetchPostsAllSuccess,
-  fetchPostsAllError,
-} from './postsAllActions';
-import { getPostsonServer } from '../../services/api';
+  addPostStart,
+  addPostSuccess,
+  addPostError,
+} from './postAddNewActions';
+import { addPostOnServer } from '../../services/api';
 
 toast.configure({
   autoClose: 5000,
   draggable: false,
 });
 
-const getPostsAll = () => dispatch => {
-  dispatch(fetchPostsAllStart());
-  getPostsonServer()
+export const addPost = post => dispatch => {
+  dispatch(addPostStart());
+  addPostOnServer(post)
     .then(response => {
-      dispatch(fetchPostsAllSuccess(response.data));
+      dispatch(addPostSuccess(response.data));
     })
     .catch(error => {
       toast.error(
@@ -25,8 +25,8 @@ const getPostsAll = () => dispatch => {
           className: 'foo-bar',
         },
       );
-      return dispatch(fetchPostsAllError(error));
+      return dispatch(addPostError(error));
     });
 };
 
-export default getPostsAll;
+export const example = () => {};

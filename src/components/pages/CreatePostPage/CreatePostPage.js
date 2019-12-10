@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import PostNew from '../../PostNew/PostNewContainer';
+import PostCreateNew from '../../PostCreateNew/PostCreateNewContainer';
 import css from './CreatePostPage.module.css';
 
 export default class CreatePostPage extends Component {
@@ -8,7 +8,7 @@ export default class CreatePostPage extends Component {
   render() {
     return (
       <div className={css.container}>
-        <PostNew />
+        <PostCreateNew />
       </div>
     );
   }

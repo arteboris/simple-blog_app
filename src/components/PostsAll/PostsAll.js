@@ -12,7 +12,7 @@ export default class PostsAll extends Component {
   }
 
   render() {
-    const { postsAll } = this.props;
+    const { postsAll, onDeletePost } = this.props;
     return (
       <>
         <ul className={css.list}>
@@ -22,6 +22,13 @@ export default class PostsAll extends Component {
                 <h3 className={css.itemTitle}>{item.title}</h3>
                 <p className={css.itemBody}>{item.body}</p>
               </Link>
+              <button
+                className={css.btnDel}
+                type="button"
+                onClick={() => onDeletePost(item.id)}
+              >
+                Delete
+              </button>
             </li>
           ))}
         </ul>
@@ -33,4 +40,5 @@ export default class PostsAll extends Component {
 PostsAll.propTypes = {
   getPostsAll: PropTypes.func.isRequired,
   postsAll: PropTypes.arrayOf(PropTypes.shape({}).isRequired).isRequired,
+  onDeletePost: PropTypes.func.isRequired,
 };

@@ -1,14 +1,14 @@
 import { createStore, combineReducers, applyMiddleware } from 'redux';
 import { composeWithDevTools } from 'redux-devtools-extension';
 import ReduxThunk from 'redux-thunk';
-import postIdReducer from './postsId/postIdReducer';
-import postNewReducer from './postNew/postNewReducer';
-import postsAllReducer from './postsAll/postsAllReducer';
+import postReducer from './post/postReducer';
+import postsAllReducer from './postsAllList/postsAllReducer';
 import loaderReducer from './loader/loaderReducser';
+import commentsReducer from './comments/commentsReducer';
 
 const rootReducer = combineReducers({
-  postId: postIdReducer,
-  postNew: postNewReducer,
+  post: postReducer,
+  comments: commentsReducer,
   postsAll: postsAllReducer,
   isLoading: loaderReducer,
 });

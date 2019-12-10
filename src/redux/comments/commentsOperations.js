@@ -1,21 +1,21 @@
 import { toast } from 'react-toastify';
 import {
-  fetchPostStart,
-  fetchPostSuccess,
-  fetchPostError,
-} from './postIdActions';
-import { getPostIdsonServer } from '../../services/api';
+  addCommentStart,
+  addCommentSuccess,
+  addCommentError,
+} from './commentsActions';
+import { addCommentPostOnServer } from '../../services/api';
 
 toast.configure({
   autoClose: 5000,
   draggable: false,
 });
 
-const getPostId = postId => dispatch => {
-  dispatch(fetchPostStart());
-  getPostIdsonServer(postId)
+const addCommentPost = comment => dispatch => {
+  dispatch(addCommentStart());
+  addCommentPostOnServer(comment)
     .then(response => {
-      dispatch(fetchPostSuccess(response.data));
+      dispatch(addCommentSuccess(response.data));
     })
     .catch(error => {
       toast.error(
@@ -25,8 +25,8 @@ const getPostId = postId => dispatch => {
           className: 'foo-bar',
         },
       );
-      return dispatch(fetchPostError(error));
+      return dispatch(addCommentError(error));
     });
 };
 
-export default getPostId;
+export default addCommentPost;
