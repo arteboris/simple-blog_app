@@ -36,6 +36,7 @@ class PostChange extends Component {
   render() {
     const { onClose } = this.props;
     const { title, body } = this.state;
+
     return (
       <>
         <form className={css.adForm} onSubmit={this.handleSubmit}>

@@ -10,21 +10,21 @@ class Post extends Component {
   state = { isPostChange: false, isComments: false };
 
   appRef = createRef();
+  //  скроллинг
+  //  scrollToMyRef = () => {
+  //  const { scrollHeight } = this.appRef.current;
+  //  window.scrollTo({
+  //  top: scrollHeight,
+  //  behavior: 'smooth',
+  //  });
+  // };
 
   componentDidUpdate() {
     const { post, onReturn } = this.props;
-    if (post.length === 0) {
+    if (!post.id) {
       onReturn();
     }
   }
-
-  // scrollToMyRef = () => {
-  //   const { scrollHeight } = this.appRef.current;
-  //   window.scrollTo({
-  //     top: scrollHeight,
-  //     behavior: 'smooth',
-  //   });
-  // };
 
   openPostChange = () => this.setState({ isPostChange: true });
 

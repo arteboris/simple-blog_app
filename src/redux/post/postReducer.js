@@ -8,7 +8,8 @@ const postIdReducer = (state = {}, { type, payload }) => {
     case Type.GET_POST_SUCCESS:
       return payload;
     case Type.CHANGE_POST_SUCCESS:
-      return { ...state, payload };
+      payload.comments = [...state.comments];
+      return payload;
     case AllPostsType.Type.DELETE_POST_SUCCESS:
       return {};
     case CommentsType.Type.ADD_COMMENT_SUCCESS:

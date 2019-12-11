@@ -4,7 +4,6 @@
   width: 700px;
   max-width: 100%;
   padding: 20px 0;
-  background-color: rgb(255, 255, 255);
   border-radius: 4px;
   margin: 0 auto;
 }
@@ -21,6 +20,7 @@
   font-weight: 400;
   font-size: 16px;
   color: black;
+  background-color: rgb(255, 255, 255);
 }
 .adForm button {
   background-color: #2b5577;
